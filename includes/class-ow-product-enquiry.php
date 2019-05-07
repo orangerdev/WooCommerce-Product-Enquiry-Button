@@ -103,24 +103,24 @@ class Od_Product_Enquiry {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-od-product-enquiry-loader.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ow-product-enquiry-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-od-product-enquiry-i18n.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-ow-product-enquiry-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-od-product-enquiry-admin.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-ow-product-enquiry-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-od-product-enquiry-front.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-ow-product-enquiry-front.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/product.php';
 
 		$this->loader = new Od_Product_Enquiry_Loader();

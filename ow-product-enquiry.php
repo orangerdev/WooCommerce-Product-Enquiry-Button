@@ -41,19 +41,19 @@ define( 'OD_PRODUCT_ENQUIRY_URL'	, plugin_dir_url(__FILE__));
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-od-product-enquiry-activator.php
+ * This action is documented in includes/class-ow-product-enquiry-activator.php
  */
 function activate_ow_product_enquiry() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-od-product-enquiry-activator.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-ow-product-enquiry-activator.php';
 	Od_Product_Enquiry_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-od-product-enquiry-deactivator.php
+ * This action is documented in includes/class-ow-product-enquiry-deactivator.php
  */
 function deactivate_ow_product_enquiry() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-od-product-enquiry-deactivator.php';
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-ow-product-enquiry-deactivator.php';
 	Od_Product_Enquiry_Deactivator::deactivate();
 }
 
@@ -64,7 +64,7 @@ register_deactivation_hook( __FILE__, 'deactivate_ow_product_enquiry' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-od-product-enquiry.php';
+require plugin_dir_path( __FILE__ ) . 'includes/class-ow-product-enquiry.php';
 
 /**
  * Begins execution of the plugin.
