@@ -53,6 +53,8 @@ class Product
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 
+		add_shortcode('orpe-display-buttons'	,[$this,'render_button_shortcodes']);
+
 	}
 
 	/**
@@ -105,17 +107,18 @@ class Product
      * Display enquiry buttons
      * Hooked via action woocommerce_single_product_summart, priority dynamic
      * @since   1.0.0
+	 * @param 	mixed 	$product
      * @return  void
      */
-	public function display_buttons()
+	public function display_buttons($product = NULL)
 	{
 		$email_active = boolval(carbon_get_theme_option('owpe_email_active'));
 
 		if(true === $email_active) :
 
 			$email_recipient   = sanitize_email(carbon_get_theme_option('owpe_email_recipient'));
-			$email_title       = esc_textarea($this->render_shortodes(carbon_get_theme_option('owpe_email_title')));
-			$email_content     = esc_html($this->render_shortodes(carbon_get_theme_option('owpe_email_content')));
+			$email_title       = esc_textarea($this->render_shortodes(carbon_get_theme_option('owpe_email_title'),$product));
+			$email_content     = esc_html($this->render_shortodes(carbon_get_theme_option('owpe_email_content'),$product));
 			$link              = sprintf('mailto:%s?subject=%s&body=%s',$email_recipient,$email_title,$email_content);
 			$text_button       = carbon_get_theme_option('owpe_email_text_button');
 			$text_button_color = carbon_get_theme_option('owpe_email_text_button_color');
@@ -124,6 +127,35 @@ class Product
 
 			require(OD_PRODUCT_ENQUIRY_DIR.'public/partials/button.php');
 		endif;
+	}
+
+	/**
+	 * Display button by shortcodes
+	 * @param  array 	$atts
+	 * @return string
+	 */
+	public function render_button_shortcodes($atts)
+	{
+		$the_product = NULL;
+		$atts = shortcode_atts([
+			'product-id'	=> NULL
+		],$atts);
+
+		if(is_null($atts['product-id']) && is_singular('product')) :
+			global $product;
+			$the_product = $product;
+		elseif(!is_null($atts['product-id'])) :
+			$the_product = wc_get_product($atts['product-id']);
+		endif;
+
+		ob_start();
+
+		$this->display_buttons($product);
+
+		$text = ob_get_contents();
+		ob_end_clean();
+
+		return $text;
 	}
 
 }

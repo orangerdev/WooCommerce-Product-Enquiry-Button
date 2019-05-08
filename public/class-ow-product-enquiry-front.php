@@ -54,7 +54,7 @@ class Front {
 
 		if(is_singular('product')) :
 			wp_register_style	( 'fontawesome',		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css',[],'5.8.2');
-			wp_enqueue_style	( $this->plugin_name, 	plugin_dir_url( __FILE__ ) . 'css/od-product-enquiry-public.css', ['fontawesome'], $this->version, 'all' );
+			wp_enqueue_style	( $this->plugin_name, 	plugin_dir_url( __FILE__ ) . 'css/ow-product-enquiry-public.css', ['fontawesome'], $this->version, 'all' );
 		endif;
 
 	}
@@ -67,7 +67,7 @@ class Front {
 	 */
 	public function enqueue_scripts() {
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/od-product-enquiry-public.js', array( 'jquery' ), $this->version, false );
+		//wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/od-product-enquiry-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 
