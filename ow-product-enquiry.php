@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://ridwan-arifandi.com/
- * @since             1.0.0
+ * @since             1.1.0
  * @package           Od_Product_Enquiry
  *
  * @wordpress-plugin
  * Plugin Name:       Orangrdev - Product Enquiry Button fo WooCommerce
  * Plugin URI:        https://ridwan-arifandi.com/portfolio/product-enquiry-button-for-woocommerce/
  * Description:       Display call-to-action button in single WooCommerce product page
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            Ridwan Arifandi
  * Author URI:        https://ridwan-arifandi.com/
  * License:           GPL-2.0+
