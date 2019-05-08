@@ -173,12 +173,13 @@ class Admin {
 		->add_tab(__('Configuration','od-product-enquiry'),[
 			Field::make('select',	'owpe_display_enquiry_buttons',	__('Where to display enquiry buttons','od-product-enquiry'))
 				->add_options([
-					'before_product_title'   => __('Before Product Title','od-product-enquiry'),
-					'before_product_price'   => __('Before Product Price','od-product-enquiry'),
-					'before_add_to_cart'     => __('Before Add to Cart Button','od-product-enquiry'),
-					'after_add_to_cart'      => __('After Add to Cart Button','od-product-enquiry'),
-					'before_product_meta'    => __('Before Product Meta','od-product-enquiry'),
-					'before_product_sharing' => __('After Product Sharing','od-product-enquiry'),
+					''						 => __('Display manually by shortcode','od-product-enquiry'),
+					'before_product_title'   => __('Before product title','od-product-enquiry'),
+					'before_product_price'   => __('Before product price','od-product-enquiry'),
+					'before_add_to_cart'     => __('Before add to Cart button','od-product-enquiry'),
+					'after_add_to_cart'      => __('After add to Cart button','od-product-enquiry'),
+					'before_product_meta'    => __('Before product meta','od-product-enquiry'),
+					'before_product_sharing' => __('After product sharing','od-product-enquiry'),
 				])
 				->set_default_value('after_add_to_cart')
 		]);
