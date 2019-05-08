@@ -139,7 +139,7 @@ class Product
 		$the_product = NULL;
 		$atts = shortcode_atts([
 			'product-id'	=> NULL
-		]);
+		],$atts);
 
 		if(is_null($atts['product-id']) && is_singular('product')) :
 			global $product;
@@ -152,7 +152,7 @@ class Product
 
 		$this->display_buttons($product);
 
-		$text = ob_get_content();
+		$text = ob_get_contents();
 		ob_end_clean();
 
 		return $text;
